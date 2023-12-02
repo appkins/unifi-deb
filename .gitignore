@@ -24,3 +24,6 @@ hack/devstack
 */debian/*.substvars
 */debian/files
 matchbox/debian/matchbox
+*.dsc
+*.tar.gz
+*.log

@@ -7,7 +7,7 @@ build:
 	make
 
 binary:
-  make install DESTDIR=debian/matchbox TMP=/tmp
-  dh_makeshlibs
+	make install DESTDIR=debian/matchbox TMP=/tmp
+	dh_makeshlibs
 	dh_gencontrol
 	dh_builddeb

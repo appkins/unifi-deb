@@ -1,0 +1,19 @@
+[Unit]
+Description=Matchbox Server
+Documentation=https://github.com/poseidon/matchbox
+
+[Service]
+ExecStartPre=/usr/bin/matchbox -version
+
+EnvironmentFile=/etc/matchbox/matchbox.conf
+Environment="MATCHBOX_ADDRESS=0.0.0.0:${MATCHBOX_PORT:-8080}"
+
+ExecStartPre=/usr/bin/env --chdir=/var/lib/matchbox/scripts/tls SAN="DNS.1:${MATCHBOX_HOST},IP.1:${MATCHBOX_IP}" bash ./cert-gen && mv /var/lib/matchbox/scripts/tls/*.{crt,key} /etc/matchbox/
+
+WorkingDirectory=/var/lib/matchbox
+ExecStart=/usr/bin/matchbox
+StandardOutput=journal
+ExecStop=
+
+[Install]
+WantedBy=multi-user.target
