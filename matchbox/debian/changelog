@@ -1,0 +1,5 @@
+matchbox (0.10.0) bookworm; urgency=medium
+
+  * Initial packaging work with dpkg-buildpackage.
+
+ -- Appkins <info@appkins.io>  Thu, 06 Jul 2017 09:19:24 +0000

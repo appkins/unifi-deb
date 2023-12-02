@@ -1,0 +1,12 @@
+Source: matchbox
+Section: contrib/utils
+Priority: optional
+Maintainer: Appkins <info@appkins.io>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 0.10.0
+Homepage: https://github.com/poseidon/matchbox
+Package: matchbox
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Network boot and provisioning
+  Network boot and provision Fedora CoreOS and Flatcar Linux clusters

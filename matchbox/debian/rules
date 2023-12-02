@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+clean:
+	make clean
+
+build:
+	make
+
+binary:
+  make install DESTDIR=debian/matchbox TMP=/tmp
+  dh_makeshlibs
+	dh_gencontrol
+	dh_builddeb
