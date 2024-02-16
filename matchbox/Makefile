@@ -5,7 +5,7 @@ ARCH := "arm64"
 
 DOWNLOAD_URL := "https://github.com/poseidon/matchbox/releases/download/v$(VERSION)/matchbox-v$(VERSION)-linux-$(ARCH).tar.gz"
 
-.PHONY: all clean install matchbox package
+.PHONY: all clean install matchbox
 
 all: matchbox
 
@@ -27,6 +27,3 @@ install:
 	cp matchbox.service $(DESTDIR)/lib/systemd/system/matchbox.service
 	cp matchbox.conf $(DESTDIR)/etc/matchbox/matchbox.conf
 	cp -R $(TMP)/matchbox/scripts $(DESTDIR)/var/lib/matchbox/scripts
-
-package:
-	@dpkg-buildpackage -b

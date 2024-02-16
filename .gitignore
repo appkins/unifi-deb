@@ -27,3 +27,5 @@ matchbox/debian/matchbox
 *.dsc
 *.tar.gz
 *.log
+.build
+.tmp
